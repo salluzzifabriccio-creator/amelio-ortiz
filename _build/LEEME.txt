@@ -1,0 +1,10 @@
+Estilos e íconos compilados (para que el sitio cargue rápido).
+
+Si agregás clases de Tailwind nuevas en los HTML o JS públicos, regenerá tw.css desde esta carpeta:
+  npx tailwindcss@3.4.16 -c tailwind.config.js -i input.css -o ../tw.css --minify
+
+Si usás un ícono nuevo (data-lucide="..."), regenerá iconos.js (necesita lucide.min.js 0.460.0 en esta carpeta):
+  curl -o lucide.min.js https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js
+  node hacer-iconos.js arrow-left arrow-right ...(todos los íconos usados)
+
+El panel admin (admin-*.html) sigue usando Tailwind por CDN; no depende de esto.

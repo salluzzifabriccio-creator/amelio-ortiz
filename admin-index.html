@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administración | Amelio Ortiz</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], display: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"] },
+          colors: {
+            orange: { 50: "#FCF8E4", 100: "#FAF2D1", 200: "#F4E7AE", 300: "#ECD87E", 400: "#E6CC5B", 500: "#E2C441", 600: "#CCAD24", 700: "#A58C1D", 800: "#7E6C1B", 900: "#635518", 950: "#322B0B" },
+            navy: { 50: "#F4F6FB", 100: "#E5EAF5", 200: "#C9D3E9", 300: "#9BAED4", 400: "#617EB8", 500: "#385794", 600: "#284071", 700: "#183060", 800: "#16284B", 900: "#0E1D39", 950: "#081226" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" />
+  <link rel="icon" type="image/png" href="logo-amelio.png?v=20260830" />
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="admin-index.html" class="flex items-center gap-3">
+        <img src="logo-amelio.png?v=20260830" alt="Logo Amelio Ortiz" class="h-9 w-9 rounded-full object-cover" />
+        <span class="font-display text-base font-bold text-slate-900">Panel de administración</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="index.html" target="_blank" class="text-sm font-medium text-slate-500 hover:text-orange-600">Ver sitio público ↗</a>
+        <button id="logout-btn" type="button" class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-100">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h1 class="font-display text-2xl font-extrabold tracking-tight text-slate-900">Vehículos</h1>
+        <p id="result-count" class="mt-1 text-sm text-slate-500">Cargando…</p>
+      </div>
+      <a href="admin-vehiculo-form.html" class="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600">
+        + Agregar vehículo
+      </a>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+      <input id="filter-search" type="text" placeholder="Buscar por marca o modelo…" class="min-w-[200px] flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+      <select id="filter-tipo" class="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
+        <option value="">Todos los tipos</option>
+        <option value="auto">Autos</option>
+        <option value="moto">Motos</option>
+      </select>
+      <select id="filter-estado" class="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
+        <option value="">Todos los estados</option>
+        <option value="disponible">Disponible</option>
+        <option value="reservado">Reservado</option>
+        <option value="vendido">Vendido</option>
+      </select>
+    </div>
+
+    <div id="list" class="mt-6 grid grid-cols-1 gap-4"></div>
+    <p id="empty-state" class="mt-6 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
+      No hay vehículos que coincidan con esos filtros.
+    </p>
+  </main>
+
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="supabase.min.js"></script>
+  <script defer src="supabase-client.js"></script>
+  <script defer src="vehiculos-repo.js"></script>
+  <script defer src="admin-common.js"></script>
+  <script defer src="admin-index-page.js?v=20260827"></script>
+</body>
+</html>

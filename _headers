@@ -1,0 +1,14 @@
+/*
+  Cache-Control: no-cache, must-revalidate
+
+/*.png
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=2592000, immutable
+
+/video/*
+  Cache-Control: public, max-age=2592000, immutable

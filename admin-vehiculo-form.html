@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehículo | Panel de Administración — Amelio Ortiz</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], display: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"] },
+          colors: {
+            orange: { 50: "#FCF8E4", 100: "#FAF2D1", 200: "#F4E7AE", 300: "#ECD87E", 400: "#E6CC5B", 500: "#E2C441", 600: "#CCAD24", 700: "#A58C1D", 800: "#7E6C1B", 900: "#635518", 950: "#322B0B" },
+            navy: { 50: "#F4F6FB", 100: "#E5EAF5", 200: "#C9D3E9", 300: "#9BAED4", 400: "#617EB8", 500: "#385794", 600: "#284071", 700: "#183060", 800: "#16284B", 900: "#0E1D39", 950: "#081226" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" />
+  <link rel="icon" type="image/png" href="logo-amelio.png?v=20260830" />
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="admin-index.html" class="flex items-center gap-3">
+        <img src="logo-amelio.png?v=20260830" alt="Logo Amelio Ortiz" class="h-9 w-9 rounded-full object-cover" />
+        <span class="font-display text-base font-bold text-slate-900">Panel de administración</span>
+      </a>
+      <a href="admin-index.html" class="text-sm font-medium text-slate-500 hover:text-orange-600">← Volver al listado</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+    <h1 id="page-title" class="font-display text-2xl font-extrabold tracking-tight text-slate-900">Agregar vehículo</h1>
+
+    <form id="vehiculo-form" class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Tipo</span>
+          <select id="f-tipo" required class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
+            <option value="auto">Auto</option>
+            <option value="moto">Moto</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Estado</span>
+          <select id="f-estado" required class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
+            <option value="disponible">Disponible</option>
+            <option value="reservado">Reservado</option>
+            <option value="vendido">Vendido</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Marca</span>
+          <input required type="text" id="f-marca" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Modelo</span>
+          <input required type="text" id="f-modelo" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Año</span>
+          <input required type="number" id="f-anio" min="1970" max="2100" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Kilometraje</span>
+          <input type="number" id="f-km" min="0" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Precio (vacío = "Consultar precio")</span>
+          <input type="number" id="f-precio" min="0" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Moneda</span>
+          <select id="f-moneda" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
+            <option value="ARS">ARS</option>
+            <option value="USD">USD</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Combustible</span>
+          <input type="text" id="f-combustible" placeholder="Nafta, Diésel…" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+        <label class="block">
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Transmisión</span>
+          <input type="text" id="f-transmision" placeholder="Manual, Automática…" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+        </label>
+      </div>
+
+      <fieldset class="mt-5">
+        <legend class="mb-1.5 text-sm font-medium text-slate-700">Categorías (podés tildar más de una)</legend>
+        <div id="f-categorias" class="flex flex-wrap gap-4">
+          <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="0km" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Autos 0KM</label>
+          <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="seminuevos" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Seminuevo</label>
+          <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="financiados" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Financiado</label>
+        </div>
+      </fieldset>
+
+      <label class="mt-5 block">
+        <span class="mb-1.5 block text-sm font-medium text-slate-700">Descripción</span>
+        <textarea id="f-descripcion" rows="4" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"></textarea>
+      </label>
+
+      <div class="mt-6 flex items-center gap-3">
+        <button type="submit" id="submit-btn" class="rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60">
+          Guardar
+        </button>
+        <a href="admin-index.html" class="text-sm font-medium text-slate-500 hover:text-slate-700">Cancelar</a>
+        <span id="save-feedback" class="hidden text-sm text-emerald-600"></span>
+      </div>
+    </form>
+
+    <section id="fotos-section" class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="font-display text-base font-bold text-slate-900">Fotos</h2>
+      <p id="fotos-desc" class="mt-1 text-sm text-slate-500">La primera foto (marcada con ★) es la que se ve en el catálogo. Usá las flechas para reordenar. Podés elegirlas ya mismo: si todavía no guardaste, se suben apenas hagas clic en "Guardar".</p>
+
+      <label class="mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-dashed border-slate-300 px-4 py-6 text-sm font-medium text-slate-500 hover:border-orange-400 hover:text-orange-600">
+        <span id="upload-label">Hacé clic para elegir fotos (podés elegir varias)</span>
+        <input type="file" id="f-fotos-input" accept="image/*" multiple class="hidden" />
+      </label>
+
+      <div id="fotos-grid" class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4"></div>
+    </section>
+  </main>
+
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="supabase.min.js"></script>
+  <script defer src="supabase-client.js"></script>
+  <script defer src="vehiculos-repo.js"></script>
+  <script defer src="admin-common.js"></script>
+  <script defer src="admin-vehiculo-form-page.js?v=20260827"></script>
+</body>
+</html>

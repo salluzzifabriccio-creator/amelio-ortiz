@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T00:00:00Z",
+  "title": "Design System: Amelio Ortiz",
+  "extensions": {
+    "colorMeta": {
+      "azul": { "role": "neutral", "displayName": "Azul Logo", "canonical": "#1d3059", "tonalRamp": ["#0d1830", "#152446", "#1d3059", "#283e6d", "#344d82", "#4b659e", "#9fb1d6", "#e2e8f4"] },
+      "azul-hondo": { "role": "neutral", "displayName": "Azul Hondo", "canonical": "#152446", "tonalRamp": ["#0d1830", "#152446", "#1d3059", "#283e6d", "#344d82", "#4b659e", "#9fb1d6", "#e2e8f4"] },
+      "azul-noche": { "role": "neutral", "displayName": "Azul Noche", "canonical": "#0d1830", "tonalRamp": ["#0d1830", "#152446", "#1d3059", "#283e6d", "#344d82", "#4b659e", "#9fb1d6", "#e2e8f4"] },
+      "azul-claro": { "role": "neutral", "displayName": "Azul Claro", "canonical": "#283e6d", "tonalRamp": ["#0d1830", "#152446", "#1d3059", "#283e6d", "#344d82", "#4b659e", "#9fb1d6", "#e2e8f4"] },
+      "azul-texto": { "role": "neutral", "displayName": "Azul Texto", "canonical": "#c3cee6", "tonalRamp": ["#152446", "#283e6d", "#4b659e", "#7088bc", "#9fb1d6", "#c3cee6", "#e2e8f4", "#f2f5fb"] },
+      "azul-tenue": { "role": "neutral", "displayName": "Azul Tenue", "canonical": "#9fb1d6", "tonalRamp": ["#152446", "#283e6d", "#4b659e", "#7088bc", "#9fb1d6", "#c3cee6", "#e2e8f4", "#f2f5fb"] },
+      "naranja": { "role": "primary", "displayName": "Naranja Amelio", "canonical": "#f09428", "tonalRamp": ["#331c04", "#5c340a", "#7e470b", "#a85e0b", "#d27a12", "#f09428", "#fad09a", "#fef5ea"] },
+      "naranja-vivo": { "role": "primary", "displayName": "Naranja Vivo", "canonical": "#f5a54a", "tonalRamp": ["#331c04", "#5c340a", "#7e470b", "#a85e0b", "#d27a12", "#f5a54a", "#fad09a", "#fef5ea"] },
+      "naranja-tinta": { "role": "primary", "displayName": "Naranja Tinta", "canonical": "#a85e0b", "tonalRamp": ["#331c04", "#5c340a", "#7e470b", "#a85e0b", "#d27a12", "#f09428", "#fad09a", "#fef5ea"] },
+      "reservado-tinta": { "role": "neutral", "displayName": "Tinta Reservado", "canonical": "#8a4b00", "tonalRamp": ["#2e1900", "#4d2a00", "#6b3a00", "#8a4b00", "#b06a1a", "#d29a5a", "#ecc9a0", "#faefe2"] },
+      "papel": { "role": "neutral", "displayName": "Papel", "canonical": "#ffffff", "tonalRamp": ["#17203a", "#4a5474", "#6b7490", "#9fb1d6", "#cdd5e6", "#e3e7f0", "#f4f6fb", "#ffffff"] },
+      "dorso": { "role": "neutral", "displayName": "Dorso", "canonical": "#f4f6fb", "tonalRamp": ["#17203a", "#4a5474", "#6b7490", "#9fb1d6", "#cdd5e6", "#e3e7f0", "#f4f6fb", "#ffffff"] },
+      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#17203a", "tonalRamp": ["#0b1020", "#17203a", "#2c3656", "#4a5474", "#6b7490", "#9aa2bb", "#cdd5e6", "#f4f6fb"] },
+      "tinta-suave": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "#4a5474", "tonalRamp": ["#0b1020", "#17203a", "#2c3656", "#4a5474", "#6b7490", "#9aa2bb", "#cdd5e6", "#f4f6fb"] },
+      "renglon": { "role": "neutral", "displayName": "Renglón", "canonical": "#cdd5e6", "tonalRamp": ["#17203a", "#4a5474", "#6b7490", "#9aa2bb", "#b5bfd6", "#cdd5e6", "#e3e7f0", "#f4f6fb"] }
+    },
+    "typographyMeta": {
+      "bloque": { "displayName": "Letras en bloque", "purpose": "LA FALDA en la postal del hero, rellena de fotos de las sierras. Solo ahí." },
+      "titulo": { "displayName": "Título", "purpose": "h1 y h2 de sección, sobre azul o dentro del dorso." },
+      "ficha": { "displayName": "Ficha", "purpose": "Nombre del vehículo y precio en la postal del stock." },
+      "body": { "displayName": "Cuerpo", "purpose": "Bajadas y texto corrido; azul texto sobre el campo, tinta sobre papel." },
+      "rotulo": { "displayName": "Rótulo", "purpose": "Etiquetas de campo, columnas del footer, estampas y matasellos." },
+      "saludo": { "displayName": "Saludo", "purpose": "Solo las líneas \"Saludos desde\"." },
+      "mano": { "displayName": "Mano", "purpose": "Lo escrito a mano en una postal: dorso del hero, respuestas del dueño, nota de pedido." }
+    },
+    "shadows": [
+      { "name": "postal", "value": "0 1px 1px rgba(5,10,25,0.18), 0 10px 24px -6px rgba(5,10,25,0.45), 0 30px 60px -20px rgba(5,10,25,0.55)", "purpose": "Toda pieza de papel: postales, caras del hero, marco por avión, panel de filtros." },
+      { "name": "postal-levantada", "value": "0 1px 1px rgba(5,10,25,0.18), 0 18px 34px -8px rgba(5,10,25,0.55), 0 44px 80px -24px rgba(5,10,25,0.6)", "purpose": "Hover y foco de la postal del stock." },
+      { "name": "sello", "value": "drop-shadow(0 2px 3px rgba(5,10,25,0.3))", "purpose": "Filtro que sigue el borde dentado del sello." },
+      { "name": "boton-sello", "value": "0 1px 0 rgba(255,255,255,0.35) inset, 0 2px 3px rgba(5,10,25,0.25), 0 10px 22px -10px rgba(5,10,25,0.7)", "purpose": "Relieve del único botón naranja." },
+      { "name": "header-scroll", "value": "0 1px 0 rgba(159,177,214,0.14), 0 12px 30px -12px rgba(5,10,25,0.6)", "purpose": "Header fijo una vez que la página se desplaza." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Transiciones de estado, revelado al scroll, transición entre páginas (0.4s)." },
+      { "name": "ease-peso", "value": "cubic-bezier(0.34, 1.32, 0.5, 1)", "purpose": "Movimientos con peso: postal que se endereza (0.55s), postal que cae (1.1s), vuelta del hero (1s)." },
+      { "name": "paneo-letras", "value": "24s ease-in-out infinite alternate", "purpose": "Paneo lento de las fotos dentro de las letras en bloque." },
+      { "name": "sellos-corren", "value": "42s linear infinite", "purpose": "Tira de sellos de marcas; se pausa al pasar." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón Sello (primario)",
+      "kind": "button",
+      "refersTo": "button-sello",
+      "description": "La acción principal; el único naranja de la pantalla.",
+      "html": "<div class=\"ds-campo-azul\"><a class=\"ds-btn ds-btn-sello\" href=\"#\">Ver los vehículos <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-campo-azul { background: #1d3059; padding: 24px; } .ds-btn { display: inline-flex; align-items: center; gap: 0.55rem; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.95rem; line-height: 1; padding: 0.95rem 1.5rem; text-decoration: none; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), background-color 0.2s; } .ds-btn:active { transform: translateY(1px) scale(0.98); } .ds-btn:focus-visible { outline: 2px solid #f09428; outline-offset: 3px; } .ds-btn-sello { background: #f09428; color: #0d1830; box-shadow: 0 1px 0 rgba(255,255,255,0.35) inset, 0 2px 3px rgba(5,10,25,0.25), 0 10px 22px -10px rgba(5,10,25,0.7); } .ds-btn-sello:hover { background: #f5a54a; transform: translateY(-2px); }"
+    },
+    {
+      "name": "Botón Línea (WhatsApp header)",
+      "kind": "button",
+      "refersTo": "button-linea",
+      "description": "Segunda acción sobre azul; el WhatsApp del header va siempre así.",
+      "html": "<div class=\"ds-campo-azul\"><a class=\"ds-btn-linea\" href=\"#\">WhatsApp</a></div>",
+      "css": ".ds-campo-azul { background: #1d3059; padding: 24px; } .ds-btn-linea { display: inline-flex; align-items: center; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.86rem; line-height: 1; padding: 0.72rem 1.05rem; color: #fff; text-decoration: none; border: 1.5px solid rgba(195,206,230,0.55); transition: border-color 0.2s, background-color 0.2s; } .ds-btn-linea:hover { border-color: #fff; background: rgba(255,255,255,0.06); } .ds-btn-linea:focus-visible { outline: 2px solid #f09428; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botones sobre papel",
+      "kind": "button",
+      "refersTo": "button-tinta",
+      "description": "Consultar (tinta azul) y Ver fotos (papel con contorno) dentro de la postal.",
+      "html": "<div class=\"ds-papel\"><a class=\"ds-b ds-b-papel\" href=\"#\">Ver fotos</a><a class=\"ds-b ds-b-tinta\" href=\"#\">Consultar</a></div>",
+      "css": ".ds-papel { background: #fff; padding: 20px; display: flex; gap: 0.5rem; border-radius: 10px; } .ds-b { flex: 1; display: inline-flex; justify-content: center; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.86rem; line-height: 1; padding: 0.72rem 1.05rem; text-decoration: none; transition: background-color 0.2s, border-color 0.2s; } .ds-b:focus-visible { outline: 2px solid #f09428; outline-offset: 3px; } .ds-b-tinta { background: #1d3059; color: #fff; } .ds-b-tinta:hover { background: #283e6d; } .ds-b-papel { background: #fff; color: #17203a; border: 1.5px solid #cdd5e6; } .ds-b-papel:hover { border-color: #4a5474; }"
+    },
+    {
+      "name": "Link con flecha",
+      "kind": "custom",
+      "refersTo": "link-flecha",
+      "description": "Link de texto blanco con subrayado; nunca naranja.",
+      "html": "<div class=\"ds-campo-azul\"><a class=\"ds-link\" href=\"#\">Ver todo el catálogo <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-campo-azul { background: #1d3059; padding: 24px; } .ds-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: Archivo, system-ui, sans-serif; font-weight: 700; color: #fff; text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(195,206,230,0.4); text-underline-offset: 0.3em; transition: gap 0.25s cubic-bezier(0.16,1,0.3,1), text-decoration-color 0.2s; } .ds-link svg { color: #9fb1d6; } .ds-link:hover { gap: 0.7rem; text-decoration-color: #fff; } .ds-link:focus-visible { outline: 2px solid #f09428; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Postal del stock",
+      "kind": "card",
+      "refersTo": "postal",
+      "description": "Vehículo como postal girada con estampa de estado y datos en renglones; se endereza al pasar.",
+      "html": "<div class=\"ds-campo-azul\"><article class=\"ds-postal\" tabindex=\"0\"><div class=\"ds-foto\"><span class=\"ds-estampa\">0KM</span></div><div class=\"ds-ficha\"><h3>Fiat Cronos <span>2023</span></h3><ul class=\"ds-datos\"><li><small>Km</small>45.000</li><li><small>Combustible</small>GNC</li><li><small>Tipo</small>Auto</li></ul><p class=\"ds-precio\">Precio a consultar</p></div></article></div>",
+      "css": ".ds-campo-azul { background: #1d3059; padding: 32px; } .ds-postal { max-width: 320px; background: #fff; color: #17203a; border-radius: 10px; padding: 10px; font-family: Archivo, system-ui, sans-serif; transform: rotate(-1.1deg); box-shadow: 0 1px 1px rgba(5,10,25,0.18), 0 10px 24px -6px rgba(5,10,25,0.45), 0 30px 60px -20px rgba(5,10,25,0.55); transition: transform 0.55s cubic-bezier(0.34,1.32,0.5,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-postal:hover, .ds-postal:focus-visible { outline: none; transform: rotate(0deg) translateY(-6px); box-shadow: 0 1px 1px rgba(5,10,25,0.18), 0 18px 34px -8px rgba(5,10,25,0.55), 0 44px 80px -24px rgba(5,10,25,0.6); } .ds-foto { position: relative; aspect-ratio: 4/3; border-radius: 4px; background: linear-gradient(160deg, #283e6d, #152446); } .ds-estampa { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.32rem 0.65rem; border: 2px solid currentColor; border-radius: 6px; color: #1d3059; background: rgba(255,255,255,0.92); font-stretch: 85%; font-weight: 800; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; transform: rotate(-6deg); } .ds-ficha { padding: 0.95rem 0.35rem 0.15rem; } .ds-ficha h3 { margin: 0; font-stretch: 108%; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.015em; } .ds-ficha h3 span { font-weight: 600; color: #4a5474; font-variant-numeric: tabular-nums; } .ds-datos { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; grid-template-columns: 0.85fr 1.15fr 1fr; border-top: 1px solid #cdd5e6; border-bottom: 1px solid #cdd5e6; } .ds-datos li { padding: 0.55rem 0.1rem; font-size: 0.82rem; font-weight: 600; font-variant-numeric: tabular-nums; } .ds-datos li + li { border-left: 1px solid #cdd5e6; padding-left: 0.6rem; } .ds-datos small { display: block; font-size: 0.69rem; font-stretch: 78%; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4a5474; } .ds-precio { margin: 0.85rem 0 0; font-weight: 700; font-size: 0.92rem; color: #4a5474; }"
+    },
+    {
+      "name": "Dorso con campos de renglón",
+      "kind": "input",
+      "refersTo": "campo",
+      "description": "Formulario sobre el dorso: el campo es un renglón que se vuelve naranja al enfocar.",
+      "html": "<div class=\"ds-dorso\"><label><span class=\"ds-etiqueta\">Marca y modelo</span><input class=\"ds-campo\" placeholder=\"Ej.: Toyota Hilux\" /></label></div>",
+      "css": ".ds-dorso { background: #f4f6fb; color: #17203a; padding: 24px; border-radius: 8px; font-family: Archivo, system-ui, sans-serif; } .ds-etiqueta { display: block; font-stretch: 85%; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #4a5474; } .ds-campo { width: 100%; border: 0; border-bottom: 1.5px solid #cdd5e6; background: transparent; padding: 0.6rem 0.1rem; font: inherit; font-size: 1rem; color: #17203a; border-radius: 0; caret-color: #f09428; transition: border-color 0.2s; } .ds-campo::placeholder { color: #6b7490; } .ds-campo:focus { outline: none; border-bottom-color: #f09428; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Header azul; links azul texto, actual en blanco con línea de 2px.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Inicio</a><a href=\"#\">Catálogo</a><a href=\"#\">Alquiler</a><a href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { background: #1d3059; display: flex; gap: 1.75rem; padding: 18px 24px; font-family: Archivo, system-ui, sans-serif; } .ds-nav a { position: relative; color: #c3cee6; font-weight: 600; font-size: 0.9rem; padding: 0.35rem 0; text-decoration: none; transition: color 0.2s; } .ds-nav a:hover, .ds-nav a[aria-current=page] { color: #fff; } .ds-nav a[aria-current=page]::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: #fff; } .ds-nav a:focus-visible { outline: 2px solid #f09428; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Sello dentado",
+      "kind": "custom",
+      "refersTo": "sello",
+      "description": "Sello postal perforado con el logo o una marca adentro.",
+      "html": "<div class=\"ds-campo-azul\"><span class=\"ds-sello\"><span class=\"ds-sello-in\">Ford</span></span></div>",
+      "css": ".ds-campo-azul { background: #152446; padding: 32px; } .ds-sello { --perf: 4px; display: inline-block; padding: calc(var(--perf) * 2); background: radial-gradient(circle, transparent calc(var(--perf) - 0.5px), #fff var(--perf)) calc(var(--perf) * -1.25) calc(var(--perf) * -1.25) / calc(var(--perf) * 2.5) calc(var(--perf) * 2.5); filter: drop-shadow(0 2px 3px rgba(5,10,25,0.3)); transform: rotate(-3deg); } .ds-sello-in { display: flex; align-items: center; justify-content: center; width: 108px; height: 124px; background: #fff; outline: 1px solid rgba(23,32,58,0.12); outline-offset: -4px; font-family: Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4a5474; }"
+    },
+    {
+      "name": "Sello de goma",
+      "kind": "chip",
+      "refersTo": "sello-goma",
+      "description": "Datos cortos de la oferta estampados en blanco sobre el azul, con giro propio.",
+      "html": "<div class=\"ds-campo-azul\"><span class=\"ds-goma\" style=\"--g:-4deg\">0KM y usados</span> <span class=\"ds-goma\" style=\"--g:2.5deg\">Cuotas propias</span></div>",
+      "css": ".ds-campo-azul { background: #1d3059; padding: 24px; display: flex; gap: 0.75rem; } .ds-goma { display: inline-block; padding: 0.6rem 0.9rem; border: 2.5px solid #fff; outline: 1px solid #fff; outline-offset: -6px; border-radius: 2px; color: #fff; font-family: Archivo, system-ui, sans-serif; font-stretch: 78%; font-weight: 900; font-size: 0.8rem; line-height: 1.1; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; transform: rotate(var(--g, 0deg)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Saludos desde La Falda",
+    "overview": "El sitio es una mesa de postales serranas apoyada sobre el azul del logo. Cada pieza de contenido que se lee de cerca (un auto del stock, una reseña, un horario, un formulario) es un objeto de papel: postal blanca con borde, dorso rayado, sello dentado, matasellos. El campo azul es el correo, el fondo sobre el que llegan las cosas; nunca se interrumpe con franjas claras.\n\nLa densidad es de vidriera de pueblo, no de portal: grillas de tres postales, secciones amplias, una sola acción naranja a la vista. El carácter viene del oficio postal (perforado, tinta de goma, ribete por avión, letras en bloque con foto adentro), no de efectos. El movimiento tiene peso: las postales caen, se enderezan al pasar y la del hero se da vuelta sobre su eje.\n\nRechazo confirmado por el contrato de dirección: el hero oscuro con auto recortado y la grilla genérica de tarjetas que publica cualquier concesionaria.",
+    "keyCharacteristics": [
+      "Campo azul del logo a página completa; el papel vive solo dentro de postales y sobres con borde.",
+      "Naranja del logo gastado una vez por pantalla: la acción principal o un sello.",
+      "Postales levemente giradas que se enderezan al pasar.",
+      "Estados del stock estampados sobre la foto, como matasellos.",
+      "Archivo en tres anchos para todo; dos manos (Yellowtail, Caveat) con un único trabajo cada una."
+    ],
+    "rules": [
+      { "name": "The One Stamp Rule", "body": "El naranja aparece una vez por pantalla: la acción principal o un sello. Si dos elementos naranjas comparten el viewport, uno de los dos pasa a contorno, a tinta azul o a blanco.", "section": "colors" },
+      { "name": "The Blue Field Rule", "body": "El fondo de la página es siempre el azul del logo (o su banda hondo/noche). El papel y el dorso solo existen dentro de una postal o sobre con borde y sombra; nunca como banda clara a ancho completo.", "section": "colors" },
+      { "name": "The Two Hands Rule", "body": "Yellowtail es la mano del saludo: las líneas \"Saludos desde\". Caveat es la mano del dueño: lo escrito a mano en el dorso de una postal (mensaje del dorso, respuesta del dueño a una reseña, la nota \"¿Buscás un modelo?\"). Ninguna de las dos se usa para titulares, botones ni datos.", "section": "typography" },
+      { "name": "The Tabular Figures Rule", "body": "Kilómetros, años, precios, teléfonos y horarios van en cifras tabulares.", "section": "typography" },
+      { "name": "The Hero Ratio Rule", "body": "La postal del hero es 5:4 por debajo de 640px y 3:2 desde 640px. Su contenido interno escala con unidades de contenedor (cqw), así la postal se lee igual en cualquier ancho.", "section": "layout" },
+      { "name": "The One Paper Rule", "body": "Todo lo que es papel usa la sombra de postal; nada sobre el azul inventa otra elevación.", "section": "elevation" },
+      { "name": "The Block Letter Exception", "body": "La extrusión escalonada (sombras de texto en capas azul → hondo → noche) es propia de las letras en bloque de la postal y de los saludos impresos sobre la foto. No se traslada a cajas, botones ni tarjetas.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do dejar el azul logo como suelo de cada página y alternar bandas solo con azul hondo o noche.",
+      "Do gastar el naranja una vez por pantalla, en la acción principal o en un sello.",
+      "Do poner el WhatsApp del header como botón de contorno, nunca naranja.",
+      "Do dar a los links de texto blanco con subrayado y flecha.",
+      "Do girar las postales ±1° y enderezarlas al pasar o enfocar.",
+      "Do estampar los estados (0KM, Seminuevo, Reservado, Vendido) sobre la foto.",
+      "Do mostrar los datos del vehículo en renglones del dorso, con cifras tabulares.",
+      "Do respetar prefers-reduced-motion: sin giros, paneos, caídas ni scroll suave."
+    ],
+    "donts": [
+      "Don't usar papel o dorso como banda clara a ancho completo; el papel siempre tiene borde, esquina y sombra.",
+      "Don't marcar estados con pastillas de color ni badges redondeados.",
+      "Don't usar Yellowtail fuera de las líneas \"Saludos desde\" ni Caveat fuera de lo escrito a mano en una postal.",
+      "Don't pintar links de texto en naranja.",
+      "Don't trasladar la extrusión de las letras en bloque a cajas o botones.",
+      "Don't volver al hero oscuro con auto recortado ni a la grilla de tarjetas sin papel."
+    ]
+  }
+}

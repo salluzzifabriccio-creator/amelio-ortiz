@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingresar | Panel de Administración — Amelio Ortiz</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], display: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"] },
+          colors: {
+            orange: { 50: "#FCF8E4", 100: "#FAF2D1", 200: "#F4E7AE", 300: "#ECD87E", 400: "#E6CC5B", 500: "#E2C441", 600: "#CCAD24", 700: "#A58C1D", 800: "#7E6C1B", 900: "#635518", 950: "#322B0B" },
+            navy: { 50: "#F4F6FB", 100: "#E5EAF5", 200: "#C9D3E9", 300: "#9BAED4", 400: "#617EB8", 500: "#385794", 600: "#284071", 700: "#183060", 800: "#16284B", 900: "#0E1D39", 950: "#081226" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" />
+  <link rel="icon" type="image/png" href="logo-amelio.png?v=20260830" />
+</head>
+<body class="flex min-h-screen items-center justify-center bg-navy-950 px-4 font-sans antialiased">
+  <div class="w-full max-w-sm">
+    <div class="mb-6 flex flex-col items-center text-center">
+      <img src="logo-amelio.png?v=20260830" alt="Logo Amelio Ortiz" class="h-14 w-14 rounded-full object-cover shadow-lg shadow-orange-500/20" />
+      <p class="mt-3 font-display text-lg font-bold text-white">Amelio Ortiz</p>
+      <p class="text-xs font-semibold uppercase tracking-wider text-navy-300">Panel de administración</p>
+    </div>
+
+    <form id="login-form" class="rounded-2xl border border-navy-800 bg-navy-900 p-6 shadow-xl">
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-medium text-navy-200">Email</span>
+        <input required type="email" id="email" autocomplete="username" class="w-full rounded-lg border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-navy-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+      </label>
+      <label class="mt-4 block">
+        <span class="mb-1.5 block text-sm font-medium text-navy-200">Contraseña</span>
+        <input required type="password" id="password" autocomplete="current-password" class="w-full rounded-lg border border-navy-700 bg-navy-800 px-3.5 py-2.5 text-sm text-white placeholder:text-navy-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+      </label>
+      <button type="submit" id="login-submit" class="mt-6 w-full rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60">
+        Ingresar
+      </button>
+      <p id="login-error" class="mt-3 hidden rounded-lg border border-red-800 bg-red-950 px-3 py-2 text-sm text-red-300"></p>
+    </form>
+
+    <p class="mt-6 text-center text-xs text-navy-400">
+      <a href="index.html" class="hover:text-orange-400">← Volver al sitio</a>
+    </p>
+  </div>
+
+  <script defer src="supabase.min.js"></script>
+  <script defer src="supabase-client.js"></script>
+  <script defer src="vehiculos-repo.js"></script>
+  <script defer>
+    (function () {
+      "use strict";
+
+      function safe(fn, name) {
+        try { fn(); } catch (e) { console.warn("[" + name + "] failed:", e); }
+      }
+
+      function showError(msg) {
+        var el = document.getElementById("login-error");
+        el.textContent = msg;
+        el.classList.remove("hidden");
+      }
+
+      function boot() {
+        var sb = window.__SUPABASE__;
+        if (!sb) {
+          showError("No se pudo conectar con Supabase. Revisá supabase-client.js.");
+          return;
+        }
+
+        // Si ya hay sesión activa, directo al panel.
+        sb.auth.getSession().then(function (res) {
+          if (res.data && res.data.session) window.location.href = "admin-index.html";
+        });
+
+        var form = document.getElementById("login-form");
+        var submitBtn = document.getElementById("login-submit");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Ingresando…";
+          var email = document.getElementById("email").value.trim();
+          var password = document.getElementById("password").value;
+          sb.auth
+            .signInWithPassword({ email: email, password: password })
+            .then(function (res) {
+              if (res.error) {
+                showError("Email o contraseña incorrectos.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Ingresar";
+                return;
+              }
+              window.location.href = "admin-index.html";
+            })
+            .catch(function () {
+              showError("No se pudo conectar. Probá de nuevo.");
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Ingresar";
+            });
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () { safe(boot, "boot"); });
+      } else {
+        safe(boot, "boot");
+      }
+    })();
+  </script>
+</body>
+</html>
