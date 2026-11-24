@@ -46,6 +46,7 @@
           <select id="f-tipo" required class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500">
             <option value="auto">Auto</option>
             <option value="moto">Moto</option>
+            <option value="utilitario">Utilitario</option>
           </select>
         </label>
         <label class="block">
@@ -62,7 +63,7 @@
         </label>
         <label class="block">
           <span class="mb-1.5 block text-sm font-medium text-slate-700">Modelo</span>
-          <input required type="text" id="f-modelo" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
+          <input required type="text" id="f-modelo" placeholder="Ej: Cronos 1.3 MT o Corolla 2.0 AT" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
         </label>
         <label class="block">
           <span class="mb-1.5 block text-sm font-medium text-slate-700">Año</span>
@@ -73,7 +74,7 @@
           <input type="number" id="f-km" min="0" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
         </label>
         <label class="block">
-          <span class="mb-1.5 block text-sm font-medium text-slate-700">Precio (vacío = "Consultar precio")</span>
+          <span class="mb-1.5 block text-sm font-medium text-slate-700">Precio (uso interno, no se muestra en la web)</span>
           <input type="number" id="f-precio" min="0" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
         </label>
         <label class="block">
@@ -87,10 +88,7 @@
           <span class="mb-1.5 block text-sm font-medium text-slate-700">Combustible</span>
           <input type="text" id="f-combustible" placeholder="Nafta, Diésel…" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
         </label>
-        <label class="block">
-          <span class="mb-1.5 block text-sm font-medium text-slate-700">Transmisión</span>
-          <input type="text" id="f-transmision" placeholder="Manual, Automática…" class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500" />
-        </label>
+        <input type="hidden" id="f-transmision" />
       </div>
 
       <fieldset class="mt-5">
@@ -98,7 +96,6 @@
         <div id="f-categorias" class="flex flex-wrap gap-4">
           <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="0km" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Autos 0KM</label>
           <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="seminuevos" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Seminuevo</label>
-          <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" value="financiados" class="rounded border-slate-300 text-orange-500 focus:ring-orange-500" /> Financiado</label>
         </div>
       </fieldset>
 

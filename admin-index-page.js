@@ -42,7 +42,7 @@
       img +
       '<div class="min-w-[180px] flex-1">' +
       '<p class="font-display text-base font-bold text-slate-900">' + esc(v.marca) + " " + esc(v.modelo) + " <span class=\"font-semibold text-slate-400\">" + v.anio + "</span></p>" +
-      '<p class="mt-1 text-sm text-slate-500">' + (v.tipo === "moto" ? "Moto" : "Auto") + " · " + esc(v.kilometraje ? Number(v.kilometraje).toLocaleString("es-AR") + " km" : "0 km") + " · " + Admin.money(v.precio, v.moneda) + "</p>" +
+      '<p class="mt-1 text-sm text-slate-500">' + (v.tipo === "moto" ? "Moto" : v.tipo === "utilitario" ? "Utilitario" : "Auto") + " · " + esc(v.kilometraje ? Number(v.kilometraje).toLocaleString("es-AR") + " km" : "0 km") + " · " + Admin.money(v.precio, v.moneda) + "</p>" +
       '<div class="mt-2 flex flex-wrap gap-1.5">' + cats + "</div>" +
       "</div>" +
       '<span class="rounded-full px-3 py-1 text-xs font-semibold ' + Admin.estadoBadgeClass(v.estado) + '">' + Admin.estadoLabel(v.estado) + "</span>" +

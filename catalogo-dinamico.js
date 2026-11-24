@@ -63,16 +63,11 @@
     var km = formatKm(v.kilometraje);
     if (km) datos.push("<li><small>Km</small>" + km + "</li>");
     if (v.combustible) datos.push("<li><small>Combustible</small>" + esc(v.combustible) + "</li>");
-    if (v.transmision) datos.push("<li><small>Caja</small>" + esc(v.transmision) + "</li>");
-    if (datos.length < 3) datos.push("<li><small>Tipo</small>" + (v.tipo === "moto" ? "Moto" : "Auto") + "</li>");
+    if (datos.length < 3) datos.push("<li><small>Tipo</small>" + (v.tipo === "moto" ? "Moto" : v.tipo === "utilitario" ? "Utilitario" : "Auto") + "</li>");
 
-    var precio = formatPrecio(v.precio, v.moneda);
-    var precioHtml = precio
-      ? '<span class="precio">' + precio + "</span>"
-      : '<span class="precio precio--consultar">Precio a consultar</span>';
-    var financia = cats.indexOf("financiados") !== -1
-      ? '<span class="marca-financia"><i data-lucide="badge-percent" class="h-3.5 w-3.5"></i>Financiación</span>'
-      : "";
+    // El cliente pidió no mostrar precios en la web: siempre "a consultar".
+    var precioHtml = '<span class="precio precio--consultar">Precio a consultar</span>';
+    var financia = "";
     var desc = v.descripcion ? "<p data-card-desc hidden>" + esc(v.descripcion) + "</p>" : "";
 
     var dataTransmision = v.transmision ? ' data-transmision="' + esc(v.transmision) + '"' : "";

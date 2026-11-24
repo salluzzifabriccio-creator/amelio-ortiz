@@ -947,3 +947,26 @@ html.visor-abierto { overflow: hidden; }
   font-weight: 800;
 }
 .btn-contorno:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); }
+
+/* Hero: logo grande a la derecha (pedido del cliente: que se note, no de fondo) */
+.hero-fondo {
+  background:
+    radial-gradient(ellipse 60% 70% at 78% 50%, rgba(52, 77, 130, 0.45) 0%, rgba(52, 77, 130, 0) 70%),
+    linear-gradient(180deg, #13244a 0%, #0b1730 100%);
+}
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+.hero-logo { order: -1; display: flex; justify-content: flex-start; }
+.hero-logo img { width: min(78%, 320px); height: auto; filter: drop-shadow(0 10px 30px rgba(2, 6, 23, 0.55)); }
+@media (min-width: 1024px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 4rem; }
+  .hero-logo { order: 0; justify-content: center; }
+  .hero-logo img { width: 100%; max-width: 560px; }
+}
+
+/* Alquiler: aviso de uso prohibido, bien visible */
+.aviso-prohibido {
+  border-left: 4px solid #d27a12;
+  background: #fef5ea;
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+}

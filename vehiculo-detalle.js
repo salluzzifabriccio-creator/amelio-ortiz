@@ -55,7 +55,7 @@
     var meta = [v.anio];
     var km = formatKm(v.kilometraje);
     if (km) meta.push(km);
-    meta.push(cats.indexOf("0km") !== -1 ? "0KM" : (v.tipo === "moto" ? "Moto usada" : "Usado"));
+    meta.push(cats.indexOf("0km") !== -1 ? "0KM" : (v.tipo === "moto" ? "Moto usada" : v.tipo === "utilitario" ? "Utilitario usado" : "Usado"));
     $("#vd-meta").textContent = meta.join(" · ");
     $("#vd-title").textContent = v.marca + " " + v.modelo;
 
@@ -73,14 +73,13 @@
     if (km) specs.push("<li><small>Kilómetros</small>" + km.replace(" km", "") + "</li>");
     specs.push("<li><small>Año</small>" + esc(v.anio) + "</li>");
     if (v.combustible) specs.push("<li><small>Combustible</small>" + esc(v.combustible) + "</li>");
-    if (v.transmision) specs.push("<li><small>Caja</small>" + esc(v.transmision) + "</li>");
-    if (specs.length < 3) specs.push("<li><small>Tipo</small>" + (v.tipo === "moto" ? "Moto" : "Auto") + "</li>");
+    if (specs.length < 3) specs.push("<li><small>Tipo</small>" + (v.tipo === "moto" ? "Moto" : v.tipo === "utilitario" ? "Utilitario" : "Auto") + "</li>");
     $("#vd-specs").innerHTML = specs.slice(0, 3).join("");
 
-    var precio = formatPrecio(v.precio, v.moneda);
-    $("#vd-precio").textContent = precio || "Precio a consultar";
-    $("#vd-precio").classList.toggle("precio--consultar", !precio);
-    $("#vd-financiacion").classList.toggle("hidden", cats.indexOf("financiados") === -1);
+    // El cliente pidió no mostrar precios en la web: siempre "a consultar".
+    $("#vd-precio").textContent = "Precio a consultar";
+    $("#vd-precio").classList.add("precio--consultar");
+    $("#vd-financiacion").classList.add("hidden");
 
     if (v.descripcion) {
       $("#vd-desc").textContent = v.descripcion;

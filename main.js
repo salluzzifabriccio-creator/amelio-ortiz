@@ -411,7 +411,7 @@
     var marca = params.get("marca");
     var q = params.get("q");
     if (!tipo && !marca && !q) return;
-    if (tipo === "auto" || tipo === "moto") {
+    if (tipo === "auto" || tipo === "moto" || tipo === "utilitario") {
       state.tipos = [tipo];
       $$(".filtro-tipo").forEach(function (cb) { cb.checked = cb.value === tipo; });
     }

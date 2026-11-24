@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catálogo de Autos y Motos | Amelio Ortiz</title>
-  <meta name="description" content="Catálogo de autos y motos 0KM y seminuevos en Amelio Ortiz, La Falda, Córdoba. Filtrá por tipo, marca y financiación disponible." />
+  <meta name="description" content="Catálogo de autos y motos 0KM y seminuevos en Amelio Ortiz, La Falda, Córdoba. Filtrá por tipo, marca y año." />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
@@ -80,7 +80,7 @@
             <h1 class="t-titulo text-5xl text-white sm:text-6xl">
               Catálogo
             </h1>
-            <p class="t-lead mt-4 text-lg">Autos y motos 0KM y usados, revisados y listos para entregar. Tocá una postal para ver todas las fotos.</p>
+            <p class="t-lead mt-4 text-lg">Autos, motos y utilitarios 0KM y usados, revisados y listos para entregar. Tocá una postal para ver todas las fotos.</p>
           </div>
           <button type="button" id="filtros-toggle-mobile" class="btn btn-linea btn-sm lg:hidden">
             <i data-lucide="sliders-horizontal" class="h-4 w-4"></i> Filtros
@@ -113,8 +113,6 @@
                 <span class="etiqueta mb-2">Ordenar por</span>
                 <select id="filtro-orden" class="campo-caja">
                   <option value="relevancia">Más recientes</option>
-                  <option value="precio-asc">Precio: menor a mayor</option>
-                  <option value="precio-desc">Precio: mayor a menor</option>
                   <option value="anio-desc">Año: más nuevo primero</option>
                   <option value="anio-asc">Año: más antiguo primero</option>
                 </select>
@@ -127,6 +125,7 @@
                 <div class="mt-3 space-y-2.5">
                   <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="auto" class="filtro-tipo" /> Auto</label>
                   <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="moto" class="filtro-tipo" /> Moto</label>
+                  <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="utilitario" class="filtro-tipo" /> Utilitario</label>
                 </div>
               </details>
 
@@ -137,7 +136,6 @@
                 <div class="mt-3 space-y-2.5">
                   <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="0km" class="filtro-condicion" /> 0KM</label>
                   <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="seminuevos" class="filtro-condicion" /> Seminuevo</label>
-                  <label class="flex items-center gap-2.5 text-sm text-[#17203a]"><input type="checkbox" value="financiados" class="filtro-condicion" /> Con financiación</label>
                 </div>
               </details>
 
@@ -146,13 +144,6 @@
                   Marca <i data-lucide="chevron-down" class="h-4 w-4 text-[#4a5474]"></i>
                 </summary>
                 <div id="filtro-marca-opciones" class="mt-3 space-y-2.5"></div>
-              </details>
-
-              <details class="mt-4 border-t border-[#cdd5e6] pt-4">
-                <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-navy-900">
-                  Transmisión <i data-lucide="chevron-down" class="h-4 w-4 text-[#4a5474]"></i>
-                </summary>
-                <div id="filtro-transmision-opciones" class="mt-3 space-y-2.5"></div>
               </details>
 
               <details class="mt-4 border-t border-[#cdd5e6] pt-4">
@@ -177,7 +168,7 @@
                 </div>
               </div>
 
-              <div class="mt-5 border-t border-[#cdd5e6] pt-4">
+              <div class="mt-5 border-t border-[#cdd5e6] pt-4" hidden>
                 <p class="text-sm font-bold text-navy-900">Precio (ARS)</p>
                 <div class="mt-3 flex items-center gap-3">
                   <label class="flex-1"><span class="etiqueta mb-1">Desde $</span><input type="number" id="precio-desde-input" placeholder="…" class="campo-caja tabular" /></label>
