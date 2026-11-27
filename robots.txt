@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin-login
+Disallow: /admin-index
+Disallow: /admin-vehiculo-form
+
+Sitemap: https://amelioortizautos.com/sitemap.xml
